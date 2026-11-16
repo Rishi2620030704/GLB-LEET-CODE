@@ -1,0 +1,26 @@
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        int n = s.length();
+        int maxLen = 0;
+
+        for (int i = 0; i < n; i++) {
+            int seen[256] = {0};   // 0 = not seen, 1 = seen (reset for every start)
+            int count = 0;
+
+            for (int j = i; j < n; j++) {
+                if (seen[s[j]] == 1) {
+                    break;          // repeated character, stop here
+                }
+                seen[s[j]] = 1;
+                count++;
+            }
+
+            if (count > maxLen) {
+                maxLen = count;
+            }
+        }
+
+        return maxLen;
+    }
+};
