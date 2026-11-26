@@ -17,4 +17,12 @@ public:
         for (int i = 0; i < n; i++) {
             // if a next symbol exists and it is bigger, subtract current
             if (i + 1 < n && value(s[i]) < value(s[i + 1])) {
-                total -=
+                total -= value(s[i]);
+            } else {
+                total += value(s[i]);
+            }
+        }
+
+        return total;
+    }
+};
