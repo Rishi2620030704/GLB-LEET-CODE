@@ -19,3 +19,9 @@ public:
                 left++;
             } else {
                 right--;
+            }
+        }
+
+        return best;
+    }
+};
